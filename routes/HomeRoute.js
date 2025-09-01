@@ -1,13 +1,9 @@
 import express from "express";
+import { getHome, postHome } from "../controller/HomeController.js";
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+router.get("/", getHome);
 
-router.post("/", (req, res) => {
-  console.log(req.body);
-  res.send("POST request to the homepage");
-});
+router.post("/", postHome);
 
 export default router;
